@@ -1,0 +1,10 @@
+<button (click)="toggleCards()">Afficher ou cacher les cartes de visite</button>
+
+<!-- Affiche les cartes de visite uniquement si showCards est vrai -->
+<div [hidden]="!showCards">
+  <app-employee-card 
+    *ngFor="let employee of employees" 
+    [employee]="employee"
+    [hidden]="employee.id % 2 !== 0">
+  </app-employee-card>
+</div>
